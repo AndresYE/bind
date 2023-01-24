@@ -1,0 +1,34 @@
+;Escuela Politécnica Nacional
+;Tema: Servicios de Red Basado en Contenedores
+;Autor: Andrés Lenin Yazán Endara
+;Servicio: DNS
+;Archivo: db.master.0.168.192.rev
+;Función: Archivo de Zonas Inversas DNS
+
+;
+; BIND data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	ns1.TIC2023.com. root.TIC2023.com. (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+
+;Información del Servidor DNS 
+@		IN      NS     ns1.TIC2023.com.
+;Dirección IP del Servidor DNS 
+ns1.TIC2023.com.     IN      A       192.168.0.2
+
+;Reverse lookup del Servidor DNS 
+2      IN      PTR    ns1.TIC2023.com.
+;Reverse lookupdel Servidor DHCP 
+3      IN      PTR    dhcp.TIC2023.com.
+;Reverse lookup del Servidor FTP
+4      IN      PTR    ftp.TIC2023.com.
+;Reverse lookup del Servidor WEB
+5      IN      PTR    www.TIC2023.com.
+;Reverse lookup del Servidor VoIP 
+6      IN      PTR    voip.TIC2023.com.
